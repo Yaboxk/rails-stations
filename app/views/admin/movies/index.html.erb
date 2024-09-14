@@ -13,7 +13,7 @@
     </thead>
     <% @movies.each do |movie| %>
         <tr>
-            <td><%= movie.id %></td>
+            <td><%= link_to movie.id, edit_admin_movie_path(movie.id) %></td>
             <td><%= movie.name %></td>
             <td><%= movie.year %></td>
             <td><%= movie.is_showing ? "公開中" : "上映予定" %></td>

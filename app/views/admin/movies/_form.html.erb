@@ -1,0 +1,29 @@
+
+<% flash.each do |message_type, message| %>
+    <div><%= message %></div>
+<% end %>
+<%= form_with model:movie, url: url do |form| %>
+        <table>
+            <tr>
+                <th>タイトル</th>
+                <td><%= form.text_field :name %></td>
+            </tr>
+            <tr>
+                <th>公開年</th>
+                <td><%= form.number_field :year %></td>
+            </tr>
+            <tr>
+                <th>上映中</th>
+                <td><%= form.check_box :is_showing %></td>
+            </tr>
+            <tr>
+                <th>概要</th>
+                <td><%= form.text_area :description %></td>
+            </tr>
+            <tr>
+                <th>画像</th>
+                <td><%= form.url_field :image_url %></td>
+            </tr>
+        </table>
+    <%= form.submit "submit" %>
+<% end %>
