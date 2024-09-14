@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :movies, only: [:index,:new,:create,:edit,:update,:destroy]
   end
 
+  resources :sheets, only: [:index]
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

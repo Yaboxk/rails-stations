@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <td col=5>スクリーン</td>
+    </tr>
+    <tr>
+        <td>:---:</td>
+        <td>:---:</td>
+        <td>:---:</td>
+        <td>:---:</td>
+        <td>:---:</td>
+    </tr>
+    <% @sheets.group_by(&:row).each do |row,row_sheets|%>
+        <tr>
+            <% row_sheets.each do |sheet|%>
+                <td><%= sheet.row %>-<%= sheet.column %></td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
