@@ -1,0 +1,10 @@
+<h2><%= @movie.name%></h2>
+<%= image_tag @movie.image_url %>
+<div>公開年：<%= @movie.year %></div>
+<div>ステータス：<%= @movie.is_showing ? "公開中" : "公開予定"%></div>
+<div>説明：<%= @movie.description %></div>
+<div>Schedule: 
+<% @schedules.each do |schedule| %>
+    <div><%= schedule.start_time %> ~ <%= schedule.end_time %></div>
+<% end %>
+</div>
